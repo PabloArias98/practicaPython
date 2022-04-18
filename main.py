@@ -1,58 +1,64 @@
-# Inicializamos
-nombre = 'Celestino'
-apellidos = 'Casal'
-lugar = 'Tudela Veguin'
-edad = 31
-texto = "Julian Muñoz Cabezacobo"
+print('Bienvenido al programa! Identificate por favor')
+nombre = input('Introduce tu nombre: ')
+apellidos = input('Tus apellidos: ')
+lugar = input('El lugar donde naciste: ')
+edad = int(input('Tu edad: '))
+texto = input('Algun comentario?: ')
+
+print('-------------------------------------------------------------------------------------')
+# Voy buscando palabras del comentario y cambiando
+if texto.find('bien') != -1:
+    print("El usuario ha dicho que "+texto.replace('bien', 'mal'))
+
+elif texto.find('excelente') != -1:
+    print("El usuario ha dicho que " + texto.replace('excelente', 'pésimo'))
+
+elif texto.find('bueno') != -1:
+    print("El usuario ha dicho que " + texto.replace('bueno', 'malo'))
+
+arreglo = ['A Coruña', 'Barcelona', 'Kuala Lumpur', 'La Habana', 'Los Ángeles', 'Madrid', 'Tokio', 'Valencia', 'Vigo']
+
+# Busco la ciudad que introducí antes y en caso de que no esté lanzo un mensaje
+for pos in arreglo:
+    if pos == lugar:
+        print('Debes de vivir en '+pos)
+    else:
+        print('Vives en otra ciudad')
 
 
-def imprimirenPantalla():
-    print('Hola, su nombre es ' + nombre + ' ' + apellidos + ' y vive en ' + lugar + ', además tiene ' + str(
-        edad) + ' años\n');
-    print(texto)
-
-
-def multiplicarNumeros(a, b):
-    return a * b
-
-
-def darValores(nombre, apellidos, lugar, edad):
+def mostrarEnPantalla():
+    print ('-------------------------------------------------------------------------------------')
     print('Hola, su nombre es ' + nombre + ' ' + apellidos + ' y vive en ' + lugar + ', además tiene ' + str(
     edad) + ' años\n');
 
-nombre = "Juan Ramón"
 
-imprimirenPantalla()
+mostrarEnPantalla()
 
-darValores('Jose', 'Souto', 'Chapela', 50)
-
-imprimirenPantalla()
 
 if edad < 30:
-    print('Tienes menos de 30 años')
+    print('Tienes menos de 30 años, tienes toda la vida por delante amigo!')
 else:
-    print('Que mayor eres')
+    print('Que mayor eres joer')
 
-comentarios = input('Deja tus comentarios: ')
-nacional = input('Eres nacional?: ')
-edad = int(input('Introduce tu edad: '))
 
-esMayorEdad = edad >= 18
-esNacional = nacional == 'Si' or nacional == "si" or nacional == "SI"
-esValido = esMayorEdad and esNacional
+numero = 0
+while numero != 2:
+    print('########')
+    print('########')
+    print('########')
+    numero = int(input('Pulse el numero mágico para continuar (del 1 al 10)'))
+    # De los números hasta que dé con el número mágico me mantendré en el bucle
+    if numero != 2:
+        print('Buuuuuuuu ese no es el número, prueba otra vez!')
+    if numero == 5:
+        print('El if no hace nada!')
+        continue
+    else:
+        print('Enhorabuena campeón!')
 
-# en las operaciones aritméticas para saber si un número es par hacemos X % 2 == 0
-print('Tus comentarios son: ' + comentarios)
-print('Edad del usuario: ' + str(edad))
+    print('########')
+    print('########')
+    print('########')
 
-if esValido:
-    print('Si')
-else:
-    print('Pertenece a sus padres')
-
-a = int(input('Introduce el primer número: '))
-b = int(input('Introduce el segundo número: '))
-
-print(str(multiplicarNumeros(a, b)))
 
 print('##### FIN DEL PROGRAMA #####')
