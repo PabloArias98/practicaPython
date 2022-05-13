@@ -90,16 +90,83 @@ def mostrarMenu():
     return op
 
 
-while mostrarMenu() != 0:
+# while mostrarMenu() != 0:
+#
+#     if mostrarMenu() == 1:
+#         identificarse()
+#
+#     elif mostrarMenu() == 2:
+#         cifrarTextos()
+#
+#     elif mostrarMenu() == 0:
+#         print("Gracias por usar el programa")
+#
+#     else:
+#         print('Opcion invalida')
 
-    if mostrarMenu() == 1:
-        identificarse()
+#manejo de clases
 
-    elif mostrarMenu() == 2:
-        cifrarTextos()
+class Persona:
+    def __init__(self, nombre, apellidos, edad, dni, telefono):
+        self.nombre = nombre
+        self.apellidos = apellidos
+        self.edad = edad
+        self.dni = dni
+        self.telefono = telefono
 
-    elif mostrarMenu() == 0:
-        print("Gracias por usar el programa")
+    def imprimirInformacion(self):
+        return self.nombre + "y de apellidos "+self.apellidos+" tiene "+str(self.edad)+", además su teléfono es "+str(self.telefono)+" y dni: "+self.dni
 
-    else:
-        print('Opcion invalida')
+
+persona1 = Persona("Alejandro", "Alex", 40, "WERWE3334", 3334343)
+persona2 = Persona("Marta", "Murian", 23, "WERWE3334", 3334343)
+
+class Marinero(Persona):
+    def __init__(self, nombre, apellidos, edad, dni, telefono, a_babor, experiencia):
+        super().__init__(self, nombre, apellidos, edad, dni, telefono)
+        self.a_babor = a_babor
+        self.experiencia = experiencia
+
+
+class Fontanero(Persona):
+    def __init__(self, nombre, apellidos, edad, dni, telefono, salario):
+        super().__init__(self, nombre, apellidos, edad, dni, telefono)
+        self.salario = salario
+
+
+class Informatico(Persona):
+    def __init__(self, nombre, apellidos, edad, dni, telefono, salario, conocimientos):
+        super().__init__(self, nombre, apellidos, edad, dni, telefono)
+        self.salario = salario
+        self.conocimientos = conocimientos
+        
+
+print(persona1.imprimirInformacion())
+print(persona2.imprimirInformacion())
+
+
+
+
+
+
+
+#Array multidimensional
+contador = 0
+historial_posiciones = [
+
+]
+
+while(contador<=5):
+    x = float(input("Escriba la posición de x: "))
+    y = float(input("Escriba la posición de y: "))
+    posicion = [x,y]
+    historial_posiciones.append(posicion)
+    contador += 1
+
+for pos in historial_posiciones:
+    print(pos)
+
+
+
+
+
